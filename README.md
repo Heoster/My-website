@@ -9,16 +9,18 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            color: #333;
         }
 
         header {
-            background-color: #ffffff;
+            background-color: #4A90E2;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            color: white;
         }
 
         nav ul {
@@ -33,17 +35,38 @@
 
         nav a {
             text-decoration: none;
-            color: #333;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700; /* Gold color on hover */
         }
 
         main {
             padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4A90E2;
         }
 
         #chat-window {
             border: 1px solid #ccc;
+            border-radius: 8px;
             padding: 10px;
-            background-color: #fff;
+            background-color: #f9f9f9;
             max-width: 400px;
             margin: auto;
         }
@@ -52,17 +75,42 @@
             height: 200px;
             overflow-y: scroll;
             border: 1px solid #ccc;
+            border-radius: 8px;
             margin-bottom: 10px;
             padding: 5px;
+            background-color: white;
         }
 
         #message-input {
-            width: 80%;
+            width: 75%;
             padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px;
         }
 
         #send-button {
             padding: 10px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #send-button:hover {
+            background-color: #357ABD; /* Darker blue on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4A90E2;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -136,7 +184,7 @@
 
         // Listen for messages
         db.collection('messages').orderBy('timestamp')
-            .onSnapshot ((snapshot) => {
+            .onSnapshot((snapshot) => {
                 messagesDiv.innerHTML = '';
                 snapshot.forEach(doc => {
                     const message = doc.data().text;
