@@ -15,9 +15,6 @@
 </style>
 <div class="video-container">
  <img src="20250126_095746.heic">
-    <!-- Caption track -->
-    <track src="captions.vtt" kind="subtitles" srclang="en" label="English" default>
-
-    Your browser does not support the video tag.
+    
 
 </div>
