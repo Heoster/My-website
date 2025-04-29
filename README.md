@@ -17,7 +17,7 @@
 <div class="video-container">
   <video controls autoplay muted loop preload="auto" poster="thumbnail.jpg">
     <source src="Snapchat-555579118.mp4 type="video/mp4">
-    <source src="video.webm" type="video/webm">
+  
     
     <!-- Caption track -->
     <track src="captions.vtt" kind="subtitles" srclang="en" label="English" default>
