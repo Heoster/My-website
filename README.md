@@ -16,7 +16,7 @@
 
 <div class="video-container">
   <video controls autoplay muted loop preload="auto" poster="thumbnail.jpg">
-    <source src="Snapchat-555579118.mp4" type="video/mp4">
+    <source src="Snapchat-1949728022.mp4" type="video/mp4">
   
     
     <!-- Caption track -->
